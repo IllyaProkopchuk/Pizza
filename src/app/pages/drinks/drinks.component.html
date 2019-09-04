@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="card"  style="width: 18rem; text-align: center; margin-top: 20px;" *ngFor="let one of drinks">
+      <img src="https://www.lapiec-pizza.com.ua/wp-content/uploads/2019/03/voda-bonaqua-700-1.jpg" class="card-img-top"
+        alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{one.name}}</h5>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">{{one.price}}</li>
+      </ul>
+    </div>
+  </div>
+  

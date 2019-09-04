@@ -1,0 +1,43 @@
+<form>
+  <div class="form-group">
+    <input [(ngModel)]="name" name="name" type="text" class="form-control" placeholder="Name here...">
+  </div>
+  <div class="form-group">
+    <input [(ngModel)]="price" name="price" type="text" class="form-control" placeholder="Price here...">
+  </div>
+  <div class="form-group">
+    <input [(ngModel)]="weight" name="weight" type="text" class="form-control" placeholder="Weight here...">
+  </div>
+  <div class="form-group">
+    <button *ngIf="!editStatus" (click)="addAdminPizza()" type="button" class="btn btn-block btn-dark">Add</button>
+    <button *ngIf="editStatus" (click)="saveEditAdminPizza()" type="button" class="btn btn-block btn-dark">Save
+      Edit</button>
+  </div>
+</form>
+<hr>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Weight</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pizza of adminPizza; let i=index">
+      <td>{{i+1}}</td>
+      <td>{{pizza.name}}</td>
+      <td>{{pizza.price}}</td>
+      <td>{{pizza.weight}}</td>
+      <td>
+        <button class="btn btn-dark" (click)="editAdminPizza(pizza)">Edit</button>
+      </td>
+      <td>
+        <button [disabled]="editStatus" class="btn btn-dark" (click)="deleteAdminPizza(pizza)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

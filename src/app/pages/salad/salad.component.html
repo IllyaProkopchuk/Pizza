@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="card"  style="width: 18rem; text-align: center; margin-top: 20px;" *ngFor="let one of salad">
+      <img src="https://www.lapiec-pizza.com.ua/wp-content/uploads/2018/07/Cezza-bigr.jpg" class="card-img-top"
+        alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{one.name}}</h5>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">{{one.price}}</li>
+        <li class="list-group-item">{{one.weight}}</li>
+      </ul>
+    </div>
+  </div>
+  
